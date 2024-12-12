@@ -1,8 +1,7 @@
 <div align="center">
   <br />
-    <a href="https://youtu.be/kRQbRAJ4-Fs" target="_blank">
       <img src="https://i.postimg.cc/37PnQw8n/Image-from.png" alt="Project Banner">
-    </a>
+   
   <br />
 
   <div>
@@ -13,10 +12,6 @@
   </div>
 
   <h3 align="center">Iphone 15 Website</h3>
-
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
-    </div>
 </div>
 
 ## 📋 <a name="table">Table of Contents</a>
@@ -28,22 +23,6 @@
 5. 🕸️ [Snippets](#snippets)
 6. 🔗 [Links](#links)
 7. 🚀 [More](#more)
-
-## 🚨 Tutorial
-
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>. 
-
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
-
-<a href="https://youtu.be/kRQbRAJ4-Fs" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
-
-## <a name="introduction">🤖 Introduction</a>
-
-This is a clone of Apple's iPhone 15 Pro website using React.js and TailwindCSS. It highlights the effective use of GSAP (Greensock Animations) and Three.js for displaying iPhone 15 Pro models in various colors and shapes.
-
-If you're getting started and need assistance or face any bugs, join our active Discord community with over 27k+ members. It's a place where people help each other out.
-
-<a href="https://discord.com/invite/n6EdbFJ" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/618f4872-1e10-42da-8213-1d69e486d02e" /></a>
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
@@ -65,7 +44,7 @@ If you're getting started and need assistance or face any bugs, join our active 
 
 👉 **Completely Responsive**: Consistent access and optimal viewing on any device with a fully responsive design that adapts to different screen sizes.
 
-and many more, including code architecture and reusability 
+and many more, including code architecture and reusability
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
@@ -235,7 +214,7 @@ import { Environment, Lightformer } from "@react-three/drei";
 const Lights = () => {
   return (
     // group different lights and lightformers. We can use group to organize lights, cameras, meshes, and other objects in the scene.
-    <group name="lights">
+    <group name='lights'>
       {/**
        * @description Environment is used to create a background environment for the scene
        * https://github.com/pmndrs/drei?tab=readme-ov-file#environment
@@ -247,21 +226,21 @@ const Lights = () => {
            * https://github.com/pmndrs/drei?tab=readme-ov-file#lightformer
            */}
           <Lightformer
-            form="rect"
+            form='rect'
             intensity={10}
             position={[-1, 0, -10]}
             scale={10}
             color={"#495057"}
           />
           <Lightformer
-            form="rect"
+            form='rect'
             intensity={10}
             position={[-10, 2, 1]}
             scale={10}
             rotation-y={Math.PI / 2}
           />
           <Lightformer
-            form="rect"
+            form='rect'
             intensity={10}
             position={[10, 0, 1]}
             scale={10}
@@ -304,27 +283,28 @@ const Lights = () => {
 
 export default Lights;
 ```
+
 </details>
 
 <details>
 <summary><code>materials</code></summary>
 
 ```javascript
-    useEffect(() => {
-      Object.entries(materials).map((material) => {
-        // these are the material names that can't be changed color
-        if (
-          material[0] !== "zFdeDaGNRwzccye" &&
-          material[0] !== "ujsvqBWRMnqdwPx" &&
-          material[0] !== "hUlRcbieVuIiOXG" &&
-          material[0] !== "jlzuBkUzuJqgiAK" &&
-          material[0] !== "xNrofRCqOXXHVZt"
-        ) {
-          material[1].color = new THREE.Color(props.item.color[0]);
-        }
-        material[1].needsUpdate = true;
-      });
-    }, [materials, props.item]);
+useEffect(() => {
+  Object.entries(materials).map((material) => {
+    // these are the material names that can't be changed color
+    if (
+      material[0] !== "zFdeDaGNRwzccye" &&
+      material[0] !== "ujsvqBWRMnqdwPx" &&
+      material[0] !== "hUlRcbieVuIiOXG" &&
+      material[0] !== "jlzuBkUzuJqgiAK" &&
+      material[0] !== "xNrofRCqOXXHVZt"
+    ) {
+      material[1].color = new THREE.Color(props.item.color[0]);
+    }
+    material[1].needsUpdate = true;
+  });
+}, [materials, props.item]);
 ```
 
 </details>
@@ -492,18 +472,18 @@ const VideoCarousel = () => {
 
   return (
     <>
-      <div className="flex items-center">
+      <div className='flex items-center'>
         {hightlightsSlides.map((list, i) => (
-          <div key={list.id} id="slider" className="sm:pr-20 pr-10">
-            <div className="video-carousel_container">
-              <div className="w-full h-full flex-center rounded-3xl overflow-hidden bg-black">
+          <div key={list.id} id='slider' className='sm:pr-20 pr-10'>
+            <div className='video-carousel_container'>
+              <div className='w-full h-full flex-center rounded-3xl overflow-hidden bg-black'>
                 <video
-                  id="video"
+                  id='video'
                   playsInline={true}
                   className={`${
                     list.id === 2 && "translate-x-44"
                   } pointer-events-none`}
-                  preload="auto"
+                  preload='auto'
                   muted
                   ref={(el) => (videoRef.current[i] = el)}
                   onEnded={() =>
@@ -516,13 +496,13 @@ const VideoCarousel = () => {
                   }
                   onLoadedMetadata={(e) => handleLoadedMetaData(i, e)}
                 >
-                  <source src={list.video} type="video/mp4" />
+                  <source src={list.video} type='video/mp4' />
                 </video>
               </div>
 
-              <div className="absolute top-12 left-[5%] z-10">
+              <div className='absolute top-12 left-[5%] z-10'>
                 {list.textLists.map((text, i) => (
-                  <p key={i} className="md:text-2xl text-xl font-medium">
+                  <p key={i} className='md:text-2xl text-xl font-medium'>
                     {text}
                   </p>
                 ))}
@@ -532,23 +512,23 @@ const VideoCarousel = () => {
         ))}
       </div>
 
-      <div className="relative flex-center mt-10">
-        <div className="flex-center py-5 px-7 bg-gray-300 backdrop-blur rounded-full">
+      <div className='relative flex-center mt-10'>
+        <div className='flex-center py-5 px-7 bg-gray-300 backdrop-blur rounded-full'>
           {videoRef.current.map((_, i) => (
             <span
               key={i}
-              className="mx-2 w-3 h-3 bg-gray-200 rounded-full relative cursor-pointer"
+              className='mx-2 w-3 h-3 bg-gray-200 rounded-full relative cursor-pointer'
               ref={(el) => (videoDivRef.current[i] = el)}
             >
               <span
-                className="absolute h-full w-full rounded-full"
+                className='absolute h-full w-full rounded-full'
                 ref={(el) => (videoSpanRef.current[i] = el)}
               />
             </span>
           ))}
         </div>
 
-        <button className="control-btn">
+        <button className='control-btn'>
           <img
             src={isLastVideo ? replayImg : !isPlaying ? playImg : pauseImg}
             alt={isLastVideo ? "replay" : !isPlaying ? "play" : "pause"}
@@ -567,7 +547,6 @@ const VideoCarousel = () => {
 };
 
 export default VideoCarousel;
-
 ```
 
 </details>
@@ -634,6 +613,7 @@ export const explore2Img = explore2;
 export const chipImg = chip;
 export const frameImg = frame;
 ```
+
 </details>
 
 <details>
@@ -673,95 +653,95 @@ canvas {
 
 @layer utilities {
   .flex-center {
-    @apply flex items-center justify-center
+    @apply flex items-center justify-center;
   }
 
   .nav-height {
-    @apply h-[calc(100vh-60px)]
+    @apply h-[calc(100vh-60px)];
   }
 
   .btn {
-    @apply px-5 py-2 rounded-3xl bg-blue my-5 hover:bg-transparent border border-transparent hover:border hover:text-blue hover:border-blue
+    @apply px-5 py-2 rounded-3xl bg-blue my-5 hover:bg-transparent border border-transparent hover:border hover:text-blue hover:border-blue;
   }
 
   .color-container {
-    @apply flex items-center justify-center px-4 py-4 rounded-full bg-gray-300 backdrop-blur
+    @apply flex items-center justify-center px-4 py-4 rounded-full bg-gray-300 backdrop-blur;
   }
 
   .size-btn-container {
-    @apply flex items-center justify-center p-1 rounded-full bg-gray-300 backdrop-blur ml-3 gap-1
+    @apply flex items-center justify-center p-1 rounded-full bg-gray-300 backdrop-blur ml-3 gap-1;
   }
 
   .size-btn {
-    @apply w-10 h-10 text-sm flex justify-center items-center bg-white text-black rounded-full transition-all
+    @apply w-10 h-10 text-sm flex justify-center items-center bg-white text-black rounded-full transition-all;
   }
 
   .common-padding {
-    @apply sm:py-32 py-20 sm:px-10 px-5
+    @apply sm:py-32 py-20 sm:px-10 px-5;
   }
 
   .section-heading {
-    @apply text-gray lg:text-6xl md:text-5xl text-3xl lg:mb-0 mb-5 font-medium opacity-0 translate-y-20
+    @apply text-gray lg:text-6xl md:text-5xl text-3xl lg:mb-0 mb-5 font-medium opacity-0 translate-y-20;
   }
 
   .feature-text {
-    @apply text-gray max-w-md text-lg md:text-xl font-semibold opacity-0 translate-y-[100px]
+    @apply text-gray max-w-md text-lg md:text-xl font-semibold opacity-0 translate-y-[100px];
   }
 
   .feature-text-container {
-    @apply w-full flex-center flex-col md:flex-row mt-10 md:mt-16 gap-5
+    @apply w-full flex-center flex-col md:flex-row mt-10 md:mt-16 gap-5;
   }
 
   .feature-video {
-    @apply w-full h-full object-cover object-center scale-150 opacity-0
+    @apply w-full h-full object-cover object-center scale-150 opacity-0;
   }
 
   .feature-video-container {
-    @apply w-full flex flex-col md:flex-row gap-5 items-center
+    @apply w-full flex flex-col md:flex-row gap-5 items-center;
   }
 
   .link {
-    @apply text-blue hover:underline cursor-pointer flex items-center text-xl opacity-0 translate-y-20
+    @apply text-blue hover:underline cursor-pointer flex items-center text-xl opacity-0 translate-y-20;
   }
 
   .control-btn {
-    @apply ml-4 p-4 rounded-full bg-gray-300 backdrop-blur flex-center
+    @apply ml-4 p-4 rounded-full bg-gray-300 backdrop-blur flex-center;
   }
 
   .hero-title {
-    @apply text-center font-semibold text-3xl text-gray-100 opacity-0 max-md:mb-10
+    @apply text-center font-semibold text-3xl text-gray-100 opacity-0 max-md:mb-10;
   }
 
   .hiw-title {
-    @apply text-4xl md:text-7xl font-semibold text-center
+    @apply text-4xl md:text-7xl font-semibold text-center;
   }
 
   .hiw-subtitle {
-    @apply text-gray font-semibold text-xl md:text-2xl py-10 text-center
+    @apply text-gray font-semibold text-xl md:text-2xl py-10 text-center;
   }
 
   .hiw-video {
-    @apply absolute w-[95%] h-[90%] rounded-[56px] overflow-hidden
+    @apply absolute w-[95%] h-[90%] rounded-[56px] overflow-hidden;
   }
 
   .hiw-text-container {
-    @apply flex md:flex-row flex-col justify-between items-start gap-24
+    @apply flex md:flex-row flex-col justify-between items-start gap-24;
   }
 
   .hiw-text {
-    @apply text-gray text-xl font-normal md:font-semibold
+    @apply text-gray text-xl font-normal md:font-semibold;
   }
 
   .hiw-bigtext {
-    @apply text-white text-3xl md:text-5xl font-normal md:font-semibold my-2
+    @apply text-white text-3xl md:text-5xl font-normal md:font-semibold my-2;
   }
 
   .video-carousel_container {
-    @apply relative sm:w-[70vw] w-[88vw] md:h-[70vh] sm:h-[50vh] h-[35vh]
+    @apply relative sm:w-[70vw] w-[88vw] md:h-[70vh] sm:h-[50vh] h-[35vh];
   }
 
   .g_fadeIn {
-    @apply opacity-0 translate-y-[100px]
+    @apply opacity-0 translate-y-[100px];
   }
 }
 ```
@@ -771,26 +751,5 @@ canvas {
 ## <a name="links">🔗 Links</a>
 
 Public Assets used in the project can be found [here](https://drive.google.com/file/d/1syHiNxSIGXVApaIozdrLXM2x5dPhvaJL/view?usp=sharing)
-
-## <a name="more">🚀 More</a>
-
-**Advance your skills with Next.js 14 Pro Course**
-
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning adventure. They're packed with detailed explanations, cool features, and exercises to boost your skills. Give it a go!
-
-<a href="https://jsmastery.pro/next14" target="_blank">
-<img src="https://github.com/sujatagunale/EasyRead/assets/151519281/557837ce-f612-4530-ab24-189e75133c71" alt="Project Banner">
-</a>
-
-<br />
-<br />
-
-**Accelerate your professional journey with the Expert Training program**
-
-And if you're hungry for more than just a course and want to understand how we learn and tackle tech challenges, hop into our personalized masterclass. We cover best practices, different web skills, and offer mentorship to boost your confidence. Let's learn and grow together!
-
-<a href="https://www.jsmastery.pro/masterclass" target="_blank">
-<img src="https://github.com/sujatagunale/EasyRead/assets/151519281/fed352ad-f27b-400d-9b8f-c7fe628acb84" alt="Project Banner">
-</a>
 
 #
